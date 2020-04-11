@@ -19,6 +19,7 @@ class App extends Component {
   getData() {
     let URL = 'http://localhost:5000/data';
     let xhr = new XMLHttpRequest();
+    console.log('test');
 
     //Callback when Server responds
     xhr.addEventListener('load', () => {
