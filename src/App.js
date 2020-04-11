@@ -17,12 +17,12 @@ class App extends Component {
 
   //Data from HTTP request
   getData() {
-    let URL = 'http://localhost:5000/data';
+    let URL = 'http://localhost:5000/qr_data';
     let xhr = new XMLHttpRequest();
 
     //Callback when Server responds
     xhr.addEventListener('load', () => {
-      console.log('Server responds' + xhr.responseText);
+      console.log('Server responds' + xhr.response);
       this.setState({
         data: JSON.parse(xhr.response),
         dateRetrieved: true,
@@ -47,6 +47,7 @@ class App extends Component {
 }
 export default App;
 
+//Renders the QRTable
 function QRTable(props) {
   const dataRetrieved = props.dataRetrieved;
 
