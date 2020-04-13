@@ -9,6 +9,8 @@ class App extends Component {
     this.state = {
       dateRetrieved: false,
       data: {},
+      date: {},
+      time: {},
     };
   }
 

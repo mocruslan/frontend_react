@@ -16,9 +16,9 @@ class Table extends Component {
       let table_items = data.map((content, index) => {
         return (
           <tr key={index}>
-            <td>{content.content}</td>
-            <td>10.5.2010</td>
-            <td>12:30</td>
+            <td>{content.data}</td>
+            <td>{content.date}</td>
+            <td>{content.time}</td>
           </tr>
         );
       });
