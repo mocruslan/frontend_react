@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './scss/App.scss';
 
+import QrTable from './components/QrTable';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <QRTable
+          <QrTable
             dataRetrieved={this.state.dateRetrieved}
             data={this.state.data}
           />
@@ -46,33 +48,3 @@ class App extends Component {
   }
 }
 export default App;
-
-//Renders the QRTable
-function QRTable(props) {
-  const dataRetrieved = props.dataRetrieved;
-
-  if (dataRetrieved) {
-    let data = props.data;
-
-    //Return data as HTML
-    let table_items = data.map((content, index) => {
-      return (
-        <tr key={index}>
-          <td>{content.content}</td>
-        </tr>
-      );
-    });
-
-    return (
-      <table className="qr-table">
-        <thead>
-          <tr>
-            <th>Content</th>
-          </tr>
-        </thead>
-        <tbody>{table_items}</tbody>
-      </table>
-    );
-  }
-  return <h1>No data received yet!</h1>;
-}
