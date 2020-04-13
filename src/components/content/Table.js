@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import '../../scss/content/Table.scss';
 
-class QrTable extends Component {
+class Table extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,6 +17,8 @@ class QrTable extends Component {
         return (
           <tr key={index}>
             <td>{content.content}</td>
+            <td>10.5.2010</td>
+            <td>12:30</td>
           </tr>
         );
       });
@@ -25,6 +28,8 @@ class QrTable extends Component {
           <thead>
             <tr>
               <th>Content</th>
+              <th>Date</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody>{table_items}</tbody>
@@ -35,4 +40,4 @@ class QrTable extends Component {
   }
 }
 
-export default QrTable;
+export default Table;

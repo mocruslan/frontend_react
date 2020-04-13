@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './scss/App.scss';
 
-import QrTable from './components/QrTable';
+import Table from './components/content/Table';
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <QrTable
+          <Table
             dataRetrieved={this.state.dateRetrieved}
             data={this.state.data}
           />
