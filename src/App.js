@@ -19,12 +19,12 @@ class App extends Component {
 
   //Data from HTTP request
   getData() {
-    let URL = 'http://localhost:5000/data';
+    let URL = 'http://localhost:5000/qr_data';
     let xhr = new XMLHttpRequest();
 
-    //Callback when Server responds
+    //Callback when the Server responds
     xhr.addEventListener('load', () => {
-      console.log('Server responds' + xhr.responseText);
+      console.log('Server responds' + xhr.response);
       this.setState({
         data: JSON.parse(xhr.response),
         dateRetrieved: true,
@@ -48,32 +48,3 @@ class App extends Component {
   }
 }
 export default App;
-
-/*function QRTable(props) {
-  const dataRetrieved = props.dataRetrieved;
-
-  if (dataRetrieved) {
-    let data = props.data;
-
-    //Return data as HTML
-    let table_items = data.map((content, index) => {
-      return (
-        <tr key={index}>
-          <td>{content.content}</td>
-        </tr>
-      );
-    });
-
-    return (
-      <table className="qr-table">
-        <thead>
-          <tr>
-            <th>Content</th>
-          </tr>
-        </thead>
-        <tbody>{table_items}</tbody>
-      </table>
-    );
-  }
-  return <h1>No data received yet!</h1>;
-}*/
