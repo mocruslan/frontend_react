@@ -7,10 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateRetrieved: false,
+      dataRetrieved: false,
       data: {},
-      date: {},
-      time: {},
     };
   }
 
@@ -29,7 +27,7 @@ class App extends Component {
       console.log('Server responds' + xhr.response);
       this.setState({
         data: JSON.parse(xhr.response),
-        dateRetrieved: true,
+        dataRetrieved: true,
       });
     });
     xhr.open('GET', URL);
@@ -41,7 +39,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Table
-            dataRetrieved={this.state.dateRetrieved}
+            dataRetrieved={this.state.dataRetrieved}
             data={this.state.data}
           />
         </div>
